@@ -1,0 +1,17 @@
+@layout('main')
+@section('content')
+    <h1>{{ title }}</h1>
+    @if(flashMessage('notification'))
+        <div class="alert alert-success">
+            {{ flashMessage('notification') }}
+        </div>
+    @endif
+    <ul class="list-group">
+        @each(post in posts)
+            <li class="list-group-item">
+                <a href="{{ route('posts.details', { id: post.id }) }}">
+                    {{ post.title }}</li>
+                </a>
+        @endeach
+    </ul>
+@endsection
