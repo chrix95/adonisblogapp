@@ -24,6 +24,12 @@ Route.get('/posts/add', 'PostController.add').as('posts.add')
 
 Route.post('/posts', 'PostController.store').as('posts.store')
 
+Route.get('/posts/edit/:id', 'PostController.edit').as('posts.edit')
+
 Route.get('/posts/:id', 'PostController.details').as('posts.details')
+
+Route.put('/posts/:id', 'PostController.update')
+
+Route.delete('/posts/:id', 'PostController.destroy')
 
 // Route.get('/test/:id', ({ params }) => `This is the post id of ${params.id}`)
